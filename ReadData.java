@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 
 
-public class ReadDataStudent{
+public class ReadData{
     //I hard-coded the number of rows and columns so 
     //I could use a 2D array
     private double[][] data = new double[21908][14];
@@ -14,12 +14,12 @@ public class ReadDataStudent{
         try{
             Scanner scanner = new Scanner(new File("cps.csv"));
             scanner.nextLine(); // Skip the header line
-            row =0;
+            int row =0;
             while(scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 String[] lineArr = line.split(",");
-                    for( int col= 0; col < data[row].size; col++){
-                        Double.parseDouble(lineArr[col]);
+                    for( int col= 0; col < lineArr.length; col++){
+                        data[row][col] = Double.parseDouble(lineArr[col]);
                 }
                 row++;
             }
@@ -56,10 +56,10 @@ public class ReadDataStudent{
         double sum = 0;
         double mean = mean(arr);
         for (int i = 0; i < arr.length; i++){
-            sum += (math.pow(mean - arr[i]));
+            sum += (Math.pow(mean - arr[i],2));
         }
         sum = sum/arr.length -1;
-        sum = math.sqrt(sum);
+        sum = Math.sqrt(sum);
         return sum; //sample variance!
     }
     
@@ -67,8 +67,8 @@ public class ReadDataStudent{
     //the mean is the sum of the values divided by the number of values
     public double mean(double[] arr){
         double sum = 0;
-        for (int i = 0; i< array.length; i++){
-            sum += arrr[i];
+        for (int i = 0; i< arr.length; i++){
+            sum += arr[i];
         }
         return sum;
     }
@@ -99,7 +99,7 @@ public class ReadDataStudent{
             double z = x[i] * y[i];
             sum+=z;
         }
-        return z/x.length+y.length-1;    
+        return sum/x.length-1; 
     }
     
     public void runRegression(){
