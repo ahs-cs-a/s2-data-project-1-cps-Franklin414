@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 
 
-public class ReadDataStudent.java-Student{
+public class ReadDataStudent{
     //I hard-coded the number of rows and columns so 
     //I could use a 2D array
     private double[][] data = new double[21908][14];
@@ -103,18 +103,18 @@ public class ReadDataStudent.java-Student{
     }
     
     public void runRegression(){
-        // double[] x = getColumn(7);
-        // double[] y = getColumn(9);
-        // double[] xStd = standardUnits(x);
-        // double[] yStd = standardUnits(y);
-        // double correlation = correlation(xStd, yStd);
-        // double slope = correlation * stdDeviation(y) / stdDeviation(x);
-        // double intercept = mean(y) - slope * mean(x);
-        // System.out.println("Correlation: " + correlation);
-        // System.out.println("Slope: " + slope);
-        // System.out.println("Intercept: " + intercept);
-        // Scatter s = new Scatter();
-        // s.displayScatterPlot(x, y);
+        double[] x = getColumn(7);
+        double[] y = getColumn(9);
+        double[] xStd = standardUnits(x);
+        double[] yStd = standardUnits(y);
+        double correlation = correlation(xStd, yStd);
+        double slope = correlation * stdDeviation(y) / stdDeviation(x);
+        double intercept = mean(y) - slope * mean(x);
+        System.out.println("Correlation: " + correlation);
+        System.out.println("Slope: " + slope);
+        System.out.println("Intercept: " + intercept);
+        Scatter s = new Scatter();
+        s.displayScatterPlot(x, y);
     }
 
     //this prints the array passed in - you may want this for debugging
