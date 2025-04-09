@@ -81,9 +81,8 @@ public class ReadDataStudent.java-Student{
         double stdDeviation = stdDeviation(arr);
         double mean = mean(arr);
         for (int i = 0; i < arr.length;i++){
-            arr[i] = (arr[i] - mean)/stdDeviation;
+            stdArr[i] = (arr[i] - mean)/stdDeviation;
         }
-        stdArr = arr;
         return stdArr;
     }
     
