@@ -2,10 +2,10 @@ import java.util.Scanner;
 import java.io.File;
 
 
-public class ReadData-Student{
+public class ReadDataStudent.java-Student{
     //I hard-coded the number of rows and columns so 
     //I could use a 2D array
-    private double[][] data = new double[...][...];
+    private double[][] data = new double[21908][14];
 
     //This should read in the csv file and store the data in a 2D array,
     //data -- don't forget to skip the header line and parse everything
@@ -13,12 +13,14 @@ public class ReadData-Student{
     public void read(){
         try{
             Scanner scanner = new Scanner(new File("cps.csv"));
-            int row = 0;
             scanner.nextLine(); // Skip the header line
+            row =0;
             while(scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 String[] lineArr = line.split(",");
-                ...
+                    for( int col= 0; col < data[row].size; col++){
+                        Double.parseDouble(lineArr[col]);
+                }
                 row++;
             }
             scanner.close();
