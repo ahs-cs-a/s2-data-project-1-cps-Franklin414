@@ -37,8 +37,10 @@ public class ReadDataStudent.java-Student{
     //this should return a double array of the column
     //of data
     public double[] getColumn(int col){
-        double[] column = ...
-        ...
+        double[] column = new double[21908];
+        for (int i = 0; i< column.length; i++){
+            column[i] = data[i][col];
+        }
         return column;
     }
 
@@ -52,17 +54,23 @@ public class ReadDataStudent.java-Student{
     //and Math.sqrt to take the square root
     public double stdDeviation(double[] arr){
         double sum = 0;
-        double mean = ...
-        ...
-        return .. //sample variance!
+        double mean = mean(arr);
+        for (int i = 0; i < arr.length; i++){
+            sum += (math.pow(mean - arr[i]));
+        }
+        sum = sum/arr.length -1;
+        sum = math.sqrt(sum);
+        return sum; //sample variance!
     }
     
     //this returns the mean of the column of data passed in
     //the mean is the sum of the values divided by the number of values
     public double mean(double[] arr){
         double sum = 0;
-        ...
-        return ...;
+        for (int i = 0; i< array.length; i++){
+            sum += arrr[i];
+        }
+        return sum;
     }
 
     //this returns the values of a column in standard units
