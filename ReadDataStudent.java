@@ -77,10 +77,13 @@ public class ReadDataStudent.java-Student{
     //the standard units are the value minus the mean divided by the standard deviation
     //this should return a double array of the standard units
     public double[] standardUnits(double[] arr){
-        double[] stdArr = ...
-        double stdDeviation = ...;
-        double mean = ...;
-        ...
+        double[] stdArr = new double[21908];
+        double stdDeviation = stdDeviation(arr);
+        double mean = mean(arr);
+        for (int i = 0; i < arr.length;i++){
+            arr[i] = (arr[i] - mean)/stdDeviation;
+        }
+        stdArr = arr;
         return stdArr;
     }
     
