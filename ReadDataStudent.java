@@ -95,8 +95,11 @@ public class ReadDataStudent.java-Student{
     //the correlation is between -1 and 1
     public double correlation(double[] x, double[] y){
         double sum = 0;
-        ...
-        return ...;    
+        for (int i = 0; i < x.length;i++){
+            double z = x[i] * y[i];
+            sum+=z;
+        }
+        return z/x.length+y.length-1;    
     }
     
     public void runRegression(){
