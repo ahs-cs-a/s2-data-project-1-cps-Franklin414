@@ -131,7 +131,7 @@
 //     }
 
 // }
-import java.util.Scanner; 
+import java.util.Scanner;
 import java.io.File;
 
 public class ReadData{
@@ -140,7 +140,7 @@ public class ReadData{
     public void read(){
         try{
             Scanner scanner = new Scanner(new File("cps.csv"));
-            scanner.nextLine(); // Skip the header line
+            scanner.nextLine(); 
             int row = 0;
             while(scanner.hasNextLine()){
                 String line = scanner.nextLine();
@@ -170,8 +170,8 @@ public class ReadData{
         for (int i = 0; i < arr.length; i++){
             sum += Math.pow(arr[i] - mean, 2);
         }
-        sum = sum / (arr.length - 1); // Correct division for sample variance
-        return Math.sqrt(sum); // Return the square root for standard deviation
+        sum = sum / (arr.length - 1); 
+        return Math.sqrt(sum); 
     }
 
     public double mean(double[] arr){
@@ -179,7 +179,7 @@ public class ReadData{
         for (int i = 0; i < arr.length; i++){
             sum += arr[i];
         }
-        return sum / arr.length;  // Fix: divide by length to get the mean
+        return sum / arr.length;
     }
 
     public double[] standardUnits(double[] arr){
@@ -197,7 +197,7 @@ public class ReadData{
         for (int i = 0; i < x.length; i++){
             sum += x[i] * y[i];
         }
-        return sum / (x.length - 1);  // Fix: division should be by (n-1)
+        return sum / (x.length - 1);  
     }
 
     public void runRegression(){
@@ -228,3 +228,4 @@ public class ReadData{
         rd.runRegression();
     }
 }
+
